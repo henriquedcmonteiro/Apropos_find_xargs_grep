@@ -36,18 +36,18 @@
 
 <p> - Não fazemos ideia de onde se localiza a pasta em questão, apenas sabemos seu nome e que ela é um diretório. Para localiza-la podemos utilizar o seguinte raciocínio: </p>
 <p> - Para se encontrar uma caneta perdida dentro de um quarto, primeiro precisamos entrar neste quarto. O comando <b>find</b> segue esta mesma analogia. </p>
-<p> - Em sua sintaxe começamos com o comando <b>find</b> (diretório de pesquisa), no nosso exemplo pegaremos desde o diretório / + o parâmetro <b>-name</b> que será onde colocaremos o nome do diretório que estamos buscando, que por sua vez é o diretório <b>arquivos.</b></p>
+<p> - Em sua sintaxe começamos com o comando <b>find</b> (diretório de pesquisa), no nosso exemplo pegaremos desde o diretório / + a flag <b>-name</b> que será onde colocaremos o nome do diretório que estamos buscando, que por sua vez é o diretório <b>arquivos.</b></p>
 <p> - Nosso comando então seria: <b>find / -name "arquivos"</b></p>
 
 ![Passo 5](img/Passo_5.png) 
 
 <p> - Aqui falaremos de dois pontos distintos, o primeiro é o caractere <b>"?"</b> e o segundo é a saida do nosso comando. </p>
 
-<p> - O caractere </b>?</b>, podemos chamar de coringa, ele tem a função de encontrar ou não qualquer caractere <b>somente</b> naquela posição. Por exemplo, caso tivessemos a dúvida se a pasta se chama <b>"arquivos"</b> ou <b>"arquivo"</b> no singular, poderiamos utilizar o caractere coringa que nos daria qualquer caracter ou nenhum após a palavra <b>arquivo</b>. </p>
+<p> - O caractere </b>?</b>, podemos chamar de caractere coringa, ele tem a função de encontrar ou não qualquer caractere <b>somente</b> naquela posição. Por exemplo, caso tivessemos a dúvida se a pasta se chama <b>"arquivos"</b> ou <b>"arquivo"</b> no singular, poderiamos utilizar o caractere coringa que nos daria qualquer caracter ou nenhum após a palavra <b>arquivo</b>. </p>
 
-<p> - O segundo ponto é a saída do comando, notamos que temos dois resultados, mas por que isso? Porque deveríamos especificar o tipo de arquivo que queremos encontrar, caso contrário podemos tanto ter a saída de arquivos regulares ou diretórios. </p>
+<p> - O segundo ponto é a saída do comando, notamos que temos dois resultados, mas por que isso? Porque deveríamos especificar o tipo de arquivo que queremos encontrar, caso contrário podemos tanto ter a saída de arquivos regulares, especiais ou diretórios. </p>
 
-<p> - Para resolver isso é simples, basta passar o parâmetro <b>-type</b> seguido da <b>flag d</b> de directory. </p>
+<p> - Para resolver isso é simples, basta passar a flag <b>-type</b> seguido do <b>parâmetro d</b> de "directory". </p>
 
 <p> - Encontramos finalmente o nosso diretório, mas e se agora eu precisa-se ainda achar um trecho de texto de código dentro deste diretório que pudesse, por exemplo, ser um erro? </p>
 
