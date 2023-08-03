@@ -69,29 +69,30 @@
 <p> <i> - Absolute path is the one that is declared from the root of the system identified by / to the place where you want to go. </i> </p>
 <p> <i> - The relative path is the one that starts from the directory we are currently in. </i> </p>
 
-<p> - Neste exemplo criamos várias pastas e arquivos, e cada arquivo com seus textos dentro do diretório "/tmp/arquivos". Para localizar o arquivo em questão, escrevi em um desses documentos a palavra "<b>achou</b>". </p>
+<p> - In this example we have created several folders and files, and each file with its texts inside the directory "/tmp/files". To locate the file in question, I wrote in one of these documents the word "<b>achou</b>". </p>
 
-<p> - Podemos resolver este problema da seguinte forma: utilizando o comando <b>grep</b> + a flag -r (recursivo) + a palavra em questão "achou" + o caminho do diretório, absoluto ou relativo. </p>
+<p> - We can solve this problem as follows: using the command <b>grep</b> + the flag -r (recursive) + the word in question "achou" + the directory path, absolute or relative.</p>
 
-<p> - Desta forma o nosso comando seria: <b>grep -r "achou" /tmp/arquivos/</b></p>
+<p> - This way our command would be: <b>grep -r "achou" /tmp/files/</b></p>
 
-<p> - Poderíamos ter a solução desta forma, entretanto, usaríamos dois comandos diferentes quando podemos usar apenas uma linha de código.</p>
+<p> - We could have the solution this way, however, we would use two different commands when we can use only one line of code.</p>
 
-## Passo 4 - Utilizando o comando <b>grep</b>, <b>xargs</b> e <b>pipes</b> <br>
+## Step 4 - Using the <b>grep</b>, <b>xargs</b> and <b>pipes commands</b> <br>
 
-<p> - Utilizaremos o nosso comando find, utilizando a saída dele como um argumento para um novo input. </p>
+<p> - We will use our find command, using its output as an argument to a new input. </p>
 
 ![Passo 7](img/Passo_7.png) 
 
-<p> - Vamos falar a partir do nosso pipe representado pelo "<b>|</b>". O que estamos querendo passar com o nosso comando, é mais simples do que aparenta.</p>
-<p> - Nós pegaremos o output do primeiro comando que é find / -type -name arquivo? Concatenando esta saída em um novo argumento com as junções da | + o comando <b>xargs</b>. O resto do comando grep segue a mesma lógica descrita acima. </p>
+<p> - Let's talk about our pipe represented by "<b>|</b>". What we are trying to convey with our command is simpler than it seems.</p>
 
-<p> - Desta forma o nosso comando fica: <b>find / -d -name arquivo ? | xargs grep -r "achou"</b> </p>
+<p> - We will take the output of the first command which is "find / -type -name file?". Concatenating this output into a new argument with the joins of | + the command <b>xargs</b>. The rest of the grep command follows the same logic described above. </p>
 
-<p> - Em um resumo mais simplificado, estamos pegando a saída do comando <b>find</b> que seria o caminho <b>/tmp/arquivos/</b> e estamos concatenando com o comando grep, e quem faz esta ponte entre ambos os comandos transformando a saída em um argumento é a junção da barra pipe | com o comando xargs. </p>
+<p> - This way our command is: <b>find / -d -name file ? | xargs grep -r "achou"</b>. </p>
 
-<p> - Este comando procuraria recursivamente a partir do diretório /tmp/arquivos/ todos os arquivos existentes dentro dele que contem a palavra "achou". Sendo a nossa saída: <b>"/tmp/arquivos/pasta3/achou.txt:achou"</b>. </p>
+<p> - In a more simplified summary, we are taking the output of the command <b>find</b> which would be the path <b>/tmp/files/</b> and we are concatenating it with the grep command, and who makes this bridge between both commands transforming the output into an argument is the junction of the pipe | bar with the xargs command. </p>
 
-## Passo 5 - Resumo <br>
+<p> - This command would search recursively from the directory "/tmp/files/" all the files inside it that contain the word "achou". Our output being: b>"/tmp/files/folder3/achou.txt:achou"</b>. </p>
 
-<p> - Com o comando apropos, podemos achar um comando que não conhecemos por meio de palavras-chave, utilizar o comando find para encontrar um arquivo ou diretório e juntamente com o grep podemos achar dentro deste diretório, trechos de códigos que nos interessem. </p>
+## Step 5 - Summary <br>
+
+<p> - With the apropos command, we can find a command that we do not know through keywords, use the find command to find a file or directory and together with grep we can find within this directory, code snippets that interest us. </p>
